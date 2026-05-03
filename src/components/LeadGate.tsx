@@ -66,7 +66,15 @@ export default function LeadGate({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <div className={isOpen ? "invisible h-0 overflow-hidden" : ""}>{children}</div>
+      <div
+        className={
+          isOpen
+            ? "blur-md brightness-75 saturate-75 pointer-events-none select-none"
+            : ""
+        }
+      >
+        {children}
+      </div>
       {isOpen ? <LeadGateModal onSubmit={handleSubmit} onUnlocked={() => {}} /> : null}
     </>
   );

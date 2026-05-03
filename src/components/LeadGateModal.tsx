@@ -74,7 +74,7 @@ export default function LeadGateModal({
   const whatsappMasked = formatBrPhoneMask(whatsappDigits);
 
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-night/95 px-5">
+    <div className="fixed inset-0 z-50 grid place-items-center bg-night/70 backdrop-blur-md px-5">
       <div className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-gold/20 bg-night-2 shadow-[0_30px_120px_rgba(0,0,0,0.55)]">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
@@ -101,8 +101,7 @@ export default function LeadGateModal({
           </div>
 
           <p className="mt-5 text-sm leading-6 text-muted">
-            Antes de continuar, informe seu e-mail e WhatsApp. Assim que validarmos seu
-            número, você receberá uma mensagem para seguir com o agendamento.
+            Preencha seu e-mail e WhatsApp para receber as novidades da clínica.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
@@ -130,10 +129,6 @@ export default function LeadGateModal({
                 placeholder="(11) 99999-9999"
                 className="mt-2 w-full rounded-xl border border-white/10 bg-night px-4 py-3 text-paper outline-none ring-0 placeholder:text-white/35 focus:border-gold/50"
               />
-              <div className="mt-2 text-xs text-muted">
-                Ao enviar, você concorda em receber uma mensagem no WhatsApp para dar
-                continuidade ao agendamento.
-              </div>
             </label>
 
             {/* honeypot */}
