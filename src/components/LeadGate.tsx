@@ -69,7 +69,7 @@ export default function LeadGate({ children }: { children: React.ReactNode }) {
       <div
         className={
           isOpen
-            ? "blur-md brightness-75 saturate-75 pointer-events-none select-none"
+            ? "blur-sm brightness-90 saturate-90 pointer-events-none select-none"
             : ""
         }
       >

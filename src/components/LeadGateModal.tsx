@@ -74,7 +74,7 @@ export default function LeadGateModal({
   const whatsappMasked = formatBrPhoneMask(whatsappDigits);
 
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-night/70 backdrop-blur-md px-5">
+    <div className="fixed inset-0 z-50 grid place-items-center bg-night/45 backdrop-blur-sm px-5">
       <div className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-gold/20 bg-night-2 shadow-[0_30px_120px_rgba(0,0,0,0.55)]">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
