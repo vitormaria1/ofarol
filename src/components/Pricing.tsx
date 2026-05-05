@@ -47,7 +47,7 @@ export default function Pricing() {
 
           <PlanCard
             title="Sessão avulsa"
-            price="Pagamento semanal"
+            price="R$ 79,90"
             badge="Sem assinatura"
             features={[
               "Para quem prefere pagar por sessão",
