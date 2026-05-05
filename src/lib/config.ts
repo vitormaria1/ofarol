@@ -10,7 +10,7 @@ export function getPublicConfig() {
   const checkoutSingle =
     process.env.CHECKOUT_SINGLE_URL ||
     process.env.NEXT_PUBLIC_CHECKOUT_SINGLE_URL ||
-    "https://exemplo.com/sessao-avulsa";
+    "https://www.asaas.com/c/qsx44lbm47175fgs";
 
   return {
     checkout2,
