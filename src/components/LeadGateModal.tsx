@@ -7,6 +7,7 @@ import { formatBrPhoneMask, onlyDigits } from "@/lib/phone";
 export type LeadGatePayload = {
   email: string;
   whatsapp: string;
+  checkoutUrl?: string;
   hp?: string; // honeypot
   referrer?: string;
   utm?: Record<string, string>;
@@ -15,9 +16,13 @@ export type LeadGatePayload = {
 export default function LeadGateModal({
   onSubmit,
   onUnlocked,
+  ctaLabel = "Continuar",
+  checkoutUrl,
 }: {
   onSubmit: (payload: LeadGatePayload) => Promise<void>;
   onUnlocked: () => void;
+  ctaLabel?: string;
+  checkoutUrl?: string;
 }) {
   const [email, setEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -58,6 +63,7 @@ export default function LeadGateModal({
       await onSubmit({
         email: email.trim(),
         whatsapp: whatsapp.trim(),
+        checkoutUrl,
         hp: hp.trim() || undefined,
         referrer,
         utm,
@@ -101,7 +107,7 @@ export default function LeadGateModal({
           </div>
 
           <p className="mt-5 text-sm leading-6 text-muted">
-            Preencha seu e-mail e WhatsApp para receber as novidades da clínica.
+            Preencha seu e-mail e WhatsApp para continuar.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
@@ -151,7 +157,7 @@ export default function LeadGateModal({
               className="group relative mt-2 w-full overflow-hidden rounded-xl bg-gold px-5 py-3 font-semibold text-night transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
             >
               <span className="relative">
-                {isLoading ? "Validando..." : "Enviar e Continuar"}
+                {isLoading ? "Validando..." : ctaLabel}
               </span>
               <span className="pointer-events-none absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100">
                 <span className="absolute -left-16 top-0 h-full w-16 rotate-12 bg-white/20 blur-xl" />

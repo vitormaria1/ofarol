@@ -54,7 +54,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const { email, whatsapp, hp } = parsed.data;
+  const { email, whatsapp, hp, checkoutUrl } = parsed.data;
 
   // Honeypot triggered: pretend success, do nothing.
   if (hp && hp.length > 0) {
@@ -95,7 +95,10 @@ export async function POST(req: Request) {
   }
 
   // 2) send message
-  const message = messageTemplate.replace("{{CHECKOUT_4_URL}}", checkout4);
+  const chosen = checkoutUrl || checkout4;
+  const message = messageTemplate
+    .replace("{{CHECKOUT_URL}}", chosen)
+    .replace("{{CHECKOUT_4_URL}}", checkout4);
   await sendWhatsappMessage({ sendUrl, token, phoneE164, message });
 
   // We intentionally don't persist anything yet (no DB in the scope).
@@ -104,4 +107,3 @@ export async function POST(req: Request) {
 
   return NextResponse.json({ ok: true });
 }
-

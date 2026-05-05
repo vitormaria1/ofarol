@@ -31,7 +31,7 @@ export function getServerWhatsappConfig() {
 
   const messageTemplate =
     process.env.WHATSAPP_MESSAGE_TEMPLATE ||
-    "Olá! Falta pouco para você concluir sua inscriçao na Clínica O Farol. Preencha seus dados para agendar sua sessão: {{CHECKOUT_4_URL}}";
+    "Olá! Falta pouco para você concluir sua inscrição na Clínica O Farol. Preencha seus dados, efetue seu pagamento e siga para o agendamento: {{CHECKOUT_URL}}";
 
   return { baseUrl, token, verifyUrl, sendUrl, messageTemplate };
 }
