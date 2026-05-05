@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import { getPublicConfig } from "@/lib/config";
 
 export default function Pricing() {
-  const { checkout2, checkout4 } = getPublicConfig();
+  const { checkout2, checkout4, checkoutSingle } = getPublicConfig();
 
   return (
     <section id="planos" className="relative py-16 sm:py-20">
@@ -17,7 +17,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
           <PlanCard
             title="2 sessões / mês"
             price="R$ 139,90"
@@ -43,6 +43,19 @@ export default function Pricing() {
             ]}
             href={checkout4}
             cta="Assinar (4 sessões)"
+          />
+
+          <PlanCard
+            title="Sessão avulsa"
+            price="Pagamento semanal"
+            badge="Sem assinatura"
+            features={[
+              "Para quem prefere pagar por sessão",
+              "Pagamento semanal",
+              "Sem compromisso mensal",
+            ]}
+            href={checkoutSingle}
+            cta="Pagar Sessão Avulsa"
           />
         </div>
       </Container>

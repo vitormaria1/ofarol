@@ -7,10 +7,15 @@ export function getPublicConfig() {
     process.env.CHECKOUT_4_URL ||
     process.env.NEXT_PUBLIC_CHECKOUT_4_URL ||
     "https://exemplo.com/checkout-4-sessoes";
+  const checkoutSingle =
+    process.env.CHECKOUT_SINGLE_URL ||
+    process.env.NEXT_PUBLIC_CHECKOUT_SINGLE_URL ||
+    "https://exemplo.com/sessao-avulsa";
 
   return {
     checkout2,
     checkout4,
+    checkoutSingle,
   };
 }
 
